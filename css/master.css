@@ -1,0 +1,229 @@
+/****** Elad Shechter's RESET *******/
+/*** box sizing border-box for all elements ***/
+*,
+*::before,
+*::after{box-sizing:border-box;}
+a{text-decoration:none; color:inherit; cursor:pointer;}
+button{background-color:transparent; color:inherit; border-width:0; padding:0; cursor:pointer;}
+figure{margin:0;}
+input::-moz-focus-inner {border:0; padding:0; margin:0;}
+ul, ol, dd{margin:0; padding:0; list-style:none;}
+h1, h2, h3, h4, h5, h6{margin:0;}
+p{margin:0;}
+cite {font-style:normal;}
+fieldset{border-width:0; padding:0; margin:0;}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+/* onLoad */
+.frontPage {
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+    background: #413f3a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.frontPage h1 {
+    color: #e81861;
+    font-size: 6.25em;
+    text-transform: uppercase;
+    position: static;
+    line-height: 1;
+}
+.load-bar {
+    width: 1000px;
+    height: 1px;
+    background: black;
+    margin-top: 75px;
+}
+@keyframes load {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+.load-bar--progress {
+    display: block;
+    /* width: 25%; */
+    height: 1px;
+    background: #e81861;
+    animation: 1s cubic-bezier(0.4, 0, 1, 1) 0s 1 load;
+}
+/* Header */
+.header {
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+}
+.header--triangle {
+    align-items: baseline;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 12px solid #413f3a;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* .header::after {
+     content: "";
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 80px solid lightblue;
+} */
+.header__logo {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+.header__list {
+    display: flex;
+    align-items: center;
+}
+.header__list__item {
+    padding: 15px;
+}
+.header__list__item a {
+    font-size: 14px;
+}
+.header__list__item a:hover {
+    text-decoration: line-through #e81861;
+}
+
+/* Conteiner */
+body {
+    color: #413f3a;
+    background: #e1ddd1;
+    font-family: 'Open Sans', sans-serif;
+}
+.width {
+    max-width: 1000px;
+    margin: auto;
+}
+.main h1, .main h2 {
+    text-transform: uppercase;
+}
+.main h1 {
+    position: relative;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1;
+    margin-top: 50px;
+}
+.main h1::before {
+    display: block;
+    content: '';
+    width: 200px;
+    position: absolute;
+    margin-top: .5em;
+    border-top: 1px solid black;
+}
+.main h1::after {
+    display: block;
+    content: '';
+    width: 200px;
+    position: absolute;
+    margin-top: -.5em;
+    right: 0;
+    border-top: 1px solid black;
+}
+@media (max-width: 1000px) {
+    .main h1::after {
+        display: none;
+    }
+    .main h1::before {
+        display: none;
+    }
+}
+.about {
+    margin-top: 100px;
+    position: relative;
+    height: 700px;
+}
+.about h2 {
+    font-size: 80px;
+    font-weight: 800;
+    padding-top: 75px;
+}
+.about span {
+    display: block;
+    margin-top: 25px;
+    font-style: italic;
+    color: #e81861;
+    font-size: 14px;
+}
+.about__description{
+    margin-top: 25px;
+}
+.about__profile {
+    background-color: #e81861;
+    width: 572px;
+    height: 642px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -99;
+}
+.works {
+    background: #413f3a;
+    height: auto;
+    padding: 25px 25px;
+}
+.works__title {
+    color: #e1ddd1;
+    text-align: center;
+    font-weight: 400;
+}
+.works__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+    padding: 25px 25px;
+}
+.works__grid__item, .works__grid__item a {
+    height: 200px;
+    background: #e81861;
+    display: block;
+    position: relative;
+}
+.works__grid__item--hover {
+    display: none;
+}
+.works__grid__item a:hover {
+    background: #ec5e90;
+}
+.works__grid__item a:hover .works__grid__item--hover {
+    display: block;
+    text-transform: uppercase;
+    font-size: 22px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+/* Footer */
+
+.footer__nav {
+    height: 90px;
+    display: flex;
+}
+.footer__nav__list {
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+.nav__list__item {
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 600;
+}

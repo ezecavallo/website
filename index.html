@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="fav" href="/css/master.css">
+        <link rel="icon" href="img/favicon.ico">
+        <title>Ezequiel Cavallo - Python developer</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/master.css">
+    </head>
+    <body id="warp" style="overflow: hidden;">
+        <div id="onLoad" class="frontPage">
+            <h1>Welcome</h1>
+            <div class="load-bar">
+                <span  value="0" id="progress" class="load-bar--progress"></span>
+            </div>
+        </div>
+        <nav class="header width">
+            <div class="header__logo">
+                <a href="#">
+                    <img src="img/logo.png" alt="">
+                </a>
+            </div>
+            <span class="header--triangle"></span>
+            <ul class="header__list">
+                <li class="header__list__item">
+                    <a href="#">Home</a>
+                </li>
+                <li class="header__list__item">
+                    <a href="#">Works</a>
+                </li>
+                <li class="header__list__item">
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="container">
+            <section class="main width">
+                <h1>I'm Ezequiel Cavallo</h1>
+                <div class="about">
+                    <h2>Python<br> Developer</h2>
+                    <span>{Córdoba - Argentina}</span>
+                    <p class="about__description">
+                        Lorem ipsum dolor sit amet, <br>
+                        consectetur adipiscing elit, sed do eiusmod tempor <br>
+                        incididunt ut labore et dolore magna.
+                        Lorem ipsum dolor sit amet, <br>
+                        consectetur adipiscing elit, sed do eiusmod tempor <br>
+                        incididunt ut labore et dolore magna.
+                    </p>
+                    <img class="about__profile" src="img/12345.png" alt="">
+                </div>
+            </section>
+            <section class="works">
+                <h4 class="works__title">Personal Works</h4>
+                <div class="works__grid width">
+                    <div class="works__grid__item">
+                        <a href="#">
+                            <div class="works__grid__item--hover">
+                                <h5></h5>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="works__grid__item">
+                        <a href="#">
+                            <div class="works__grid__item--hover">
+                                <h5></h5>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="works__grid__item">
+                        <a href="#">
+                            <div class="works__grid__item--hover">
+                                <h5>Flask</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="footer">
+            <nav class="footer__nav">
+                <ul class="footer__nav__list">
+                    <li class="nav__list__item">
+                        <a href="mailto:ezecavallo@gmail.com" target="_blank">Contact</a>
+                    </li>
+                    <li class="nav__list__item">
+                        <a href="https://github.com/ezecavallo/" target="_blank">GitHub</a>
+                    </li>
+
+                    <li class="nav__list__item">
+                        <a href="https://www.linkedin.com/in/ezequiel-cavallo/" target="_blank">Linkedin</a>
+                    </li>
+                    <li class="nav__list__item">
+                        <a href="#" target="_blank">Twitter</a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+        <script type="text/javascript">
+        var body = document.getElementById("warp");
+        var onLoad = document.getElementById("onLoad");
+        let slideUp = (target) => {
+            target.style.transitionProperty = 'transform';
+            target.style.transitionDuration = 1000 + 'ms';
+            target.style.transform = "translateY(-100vh)";
+
+            window.setTimeout( () => {
+                target.style.removeProperty('transform');
+                target.style.removeProperty('overflow');
+                target.style.removeProperty('transition-duration');
+                target.style.removeProperty('transition-property');
+            }, 1000);
+        }
+        let fadeOut = (target) => {
+            window.setTimeout( () => {
+                target.style.display = 'none';
+            }, 1000);
+        };
+        window.addEventListener("load", function(event) {
+            setTimeout(function(){
+                slideUp(body)
+                fadeOut(onLoad)
+            },1000);
+        });
+        window.onload=function(){
+            setTimeout(function() {
+                scrollTo(0,-1)
+            }, 0);
+        }
+    </script>
+    </body>
+</html>
