@@ -27,7 +27,7 @@
                     <a href="#">Home</a>
                 </li>
                 <li class="header__list__item">
-                    <a href="#">Works</a>
+                    <a href="#works" class="works__scroll">Works</a>
                 </li>
                 <li class="header__list__item">
                     <a href="#">Contact</a>
@@ -41,37 +41,35 @@
                     <h2>Python<br> Developer</h2>
                     <span>{Córdoba - Argentina}</span>
                     <p class="about__description">
-                        Lorem ipsum dolor sit amet, <br>
-                        consectetur adipiscing elit, sed do eiusmod tempor <br>
-                        incididunt ut labore et dolore magna.
-                        Lorem ipsum dolor sit amet, <br>
-                        consectetur adipiscing elit, sed do eiusmod tempor <br>
-                        incididunt ut labore et dolore magna.
+                        I start programming just to create things and get fun with it. It became something that I enjoyed a lot and then I realized how much actually I loved it.
+I see programming as a powerful tool to change the world by solving problems and get fun doing it.
+I am a Full Stack Developer, but I mainly specialize in Python.
+
                     </p>
-                    <img class="about__profile" src="img/12345.png" alt="">
+                    <img class="about__profile" src="img/code.png" alt="">
                 </div>
             </section>
-            <section class="works">
+            <section class="works" id="works">
                 <h4 class="works__title">Personal Works</h4>
                 <div class="works__grid width">
-                    <div class="works__grid__item">
+                    <div class="works__grid__item first">
                         <a href="#">
                             <div class="works__grid__item--hover">
-                                <h5></h5>
+                                <h5>Personal Website</h5>
                             </div>
                         </a>
                     </div>
-                    <div class="works__grid__item">
+                    <div class="works__grid__item second">
                         <a href="#">
                             <div class="works__grid__item--hover">
-                                <h5></h5>
+                                <h5>URL Shortener</h5>
                             </div>
                         </a>
                     </div>
-                    <div class="works__grid__item">
+                    <div class="works__grid__item third">
                         <a href="#">
                             <div class="works__grid__item--hover">
-                                <h5>Flask</h5>
+                                <h5>BooksPicks</h5>
                             </div>
                         </a>
                     </div>
@@ -128,6 +126,17 @@
                 scrollTo(0,-1)
             }, 0);
         }
+    </script>
+    <script type="text/javascript">
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (b) {
+                b.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
     </body>
 </html>
